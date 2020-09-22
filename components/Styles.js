@@ -1,12 +1,18 @@
 import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
-    container: {
+    bookContainer: {
       flex: 1,
       backgroundColor: '#000',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      paddingTop: 80,
+      width: 150,
+      marginRight: 10,
+    },
+    container: {
+      marginTop: 80,
+      backgroundColor: '#000',
+      alignItems: 'center'
     },
     title: {
       color: 'white',
@@ -15,11 +21,11 @@ export default StyleSheet.create({
     },
     subTitle: {
       color: 'white',
-      fontSize: 20,
+      fontSize: 12,
     },
     logo: {
       height: 100,
-      width: 200,
+      width: 100,
     },
     answerButtonContainer: {
       flexDirection: 'row',

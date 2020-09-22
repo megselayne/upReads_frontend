@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableWithoutFeedback, Button, View, Image, Text, Keyboard, TextInput } from 'react-native';
+import { TouchableWithoutFeedback, Button, View, Image, Text, Keyboard, TextInput, SafeAreaView } from 'react-native';
 import Styles from './Styles';
 
 
