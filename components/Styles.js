@@ -64,5 +64,14 @@ export default StyleSheet.create({
       paddingLeft: 20,
       paddingRight: 20,
       margin: 5,
+    },
+    item: {
+      padding: 20,
+      marginVertical: 8,
+      marginHorizontal: 16,
+    },
+    header: {
+      fontSize: 32,
+      backgroundColor: "#fff"
     }
   });

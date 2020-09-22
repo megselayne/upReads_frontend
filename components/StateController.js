@@ -32,10 +32,10 @@ class StateController extends Component {
     render(){
         return(
             <>
-            {(this.state.isLoaded) ? this.decideWhichToRender() : <Text>Loading...</Text>}
+            {(this.state.isLoaded) ? this.decideWhichToRender() : <Text style={Styles.title}>Loading...</Text>}
             </>
         )
     }
 }
 
-export default StateController;
+export default StateController; 
