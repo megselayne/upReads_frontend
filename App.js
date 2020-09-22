@@ -13,6 +13,7 @@ import Styles from './components/Styles';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import Search from './components/Search';
+import StateController from './components/StateController';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,9 +22,9 @@ class App extends Component {
     return(
       <NavigationContainer theme={DarkTheme}>
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Search" component={Search} />
-          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="Home" children={() => <StateController currentPage={'home'} />} />
+          <Tab.Screen name="Search" children={() => <StateController currentPage={'search'} />}/>
+          <Tab.Screen name="Profile" children={() => <StateController currentPage={'profile'} />} />
         </Tab.Navigator>
       </NavigationContainer>
     )
