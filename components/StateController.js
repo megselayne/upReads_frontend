@@ -41,10 +41,17 @@ class StateController extends Component {
     searchBooks = (query) => {
         fetch(`http://localhost:3000/api/v1/books/search`, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                search: query
+            })
         })
+        .then(res => res.json())
         .then(res => {
             this.setState({
-                searchResults: res,
+                searchResults: res
             })
         })
     }

@@ -61,10 +61,10 @@ export default StyleSheet.create({
     },
     textInput: {
       backgroundColor: '#30343A',
-      color: 'white',
+      color: '#000',
       borderTopWidth: 1,
       borderBottomWidth: 1,
-      height: 50,
+      height: 35,
       width: 200,
       fontSize: 25,
       paddingLeft: 20,

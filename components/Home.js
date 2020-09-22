@@ -4,7 +4,7 @@ import Styles from './Styles';
 
 class Home extends Component {
 
-    renderItem = ({ item }) => {
+    renderBook = ({ item }) => {
         return(
         <SafeAreaView style={Styles.bookContainer}>
         {item.volumeInfo.imageLinks && <Image style={Styles.logo} source={{ uri: item.volumeInfo.imageLinks.smallThumbnail }} />}
@@ -21,7 +21,7 @@ class Home extends Component {
                 
                         <FlatList 
                             data={shelf}
-                            renderItem={this.renderItem}
+                            renderItem={this.renderBook}
                             keyExtractor={item => item.id}
                             horizontal={true}
                         />
@@ -38,6 +38,3 @@ class Home extends Component {
 
 export default Home;
 
-// {book.volumeInfo.imageLinks && <Image style={Styles.logo} source={{ uri: book.volumeInfo.imageLinks.smallThumbnail }} />}
-//                         <Text style={Styles.title}>{book.volumeInfo.title}</Text>
-//                         <Text style={Styles.title}>{book.volumeInfo.authors[0]}</Text>
