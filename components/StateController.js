@@ -3,6 +3,7 @@ import Styles from './Styles';
 import Home from './Home';
 import Profile from './Profile';
 import Search from './Search';
+import ShowBook from './ShowBook';
 import { TouchableWithoutFeedback, Button, View, Image, Text, Keyboard, TextInput } from 'react-native';
 
 class StateController extends Component {
@@ -61,9 +62,11 @@ class StateController extends Component {
             default: case 'home':
                 return <Home books={this.state.publicShelfBooks}/>
             case 'search':
-                return <Search searchFunc={this.searchBooks} results={this.state.searchResults}/>
+                return <Search searchFunc={this.searchBooks} results={this.state.searchResults} navigation={this.props.navigation}/>
             case 'profile':
                 return <Profile />
+            case 'show':
+                return <ShowBook navigation={this.props.navigation} />
         }
     }
     render(){

@@ -6,30 +6,37 @@
  * @flow strict-local
  */
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import React from 'react';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Styles from './components/Styles';
-import Home from './components/Home';
-import Profile from './components/Profile';
-import Search from './components/Search';
 import StateController from './components/StateController';
+import ShowBook from './components/ShowBook';
 
 const Tab = createBottomTabNavigator();
+const SearchStack = createStackNavigator();
 
-class App extends Component {
-  render() {
+const SearchStackScreen = (props) => {
+  return (
+    <SearchStack.Navigator>
+      <SearchStack.Screen name='search' children={() => <StateController currentPage={'search'} navigation={props.navigation} />}/>
+      <SearchStack.Screen name='show' component={ShowBook} />
+    </SearchStack.Navigator>
+  )
+}
+
+const App = () => {
+
     return(
       <NavigationContainer theme={DarkTheme}>
         <Tab.Navigator>
           <Tab.Screen name="Home" children={() => <StateController currentPage={'home'} />} />
-          <Tab.Screen name="Search" children={() => <StateController currentPage={'search'} />}/>
+          <Tab.Screen name="Search" component={SearchStackScreen}/>
           <Tab.Screen name="Profile" children={() => <StateController currentPage={'profile'} />} />
         </Tab.Navigator>
       </NavigationContainer>
     )
-  }
-}
 
+}
 
 export default App;

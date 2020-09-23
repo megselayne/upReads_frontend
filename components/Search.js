@@ -6,7 +6,7 @@ import VerticalBookList from './VertBookList';
 
 
 const Search = (props) => {
-    const [value, onChangeText] = React.useState('Search')
+    const [value, onChangeText] = React.useState('')
     
         return(
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -17,7 +17,7 @@ const Search = (props) => {
                         onChangeText={text => onChangeText(text)}
                         />
                         <CustomButton query={value} searchFunc={props.searchFunc}/>
-                        {props.results ? <VerticalBookList results={props.results}/> : <Text style={Styles.title}>Find your next UpRead!</Text>}
+                        {props.results ? <VerticalBookList results={props.results} navigation={props.navigation} searchFunc={props.searchFunc} /> : <Text style={Styles.title}>Find your next UpRead!</Text>}
                     </View>
                 </ScrollView>
             </TouchableWithoutFeedback>
