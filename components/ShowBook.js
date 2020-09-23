@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { TouchableOpacity, View, Text, FlatList, SafeAreaView, Image, ScrollView } from 'react-native';
+import { TouchableOpacity, Text, FlatList, SafeAreaView, Image, ScrollView } from 'react-native';
+import { WebView } from 'react-native-webview';
 import Styles from './Styles';
 
 class ShowBook extends Component {
@@ -26,6 +27,7 @@ class ShowBook extends Component {
     }
     render(){
         return(
+            
             <SafeAreaView style={Styles.container}>
             {this.state.singleBook ? (
             <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
@@ -37,6 +39,8 @@ class ShowBook extends Component {
             </ScrollView>
             ): <Text style={Styles.title}>Loading...</Text>}
             </SafeAreaView>
+
+
         )
     }
 }
