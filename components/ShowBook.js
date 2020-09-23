@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { TouchableOpacity, View, Text, FlatList, SafeAreaView, Image } from 'react-native';
+import { TouchableOpacity, View, Text, FlatList, SafeAreaView, Image, ScrollView } from 'react-native';
 import Styles from './Styles';
 
 class ShowBook extends Component {
@@ -26,10 +26,17 @@ class ShowBook extends Component {
     }
     render(){
         return(
-            <>
-            <Text style={Styles.title}>Hello Show Book</Text>
-            {this.state.singleBook && <Text style={Styles.title}>{this.state.singleBook.volumeInfo.title}</Text>}
-            </>
+            <SafeAreaView style={Styles.container}>
+            {this.state.singleBook ? (
+            <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
+            {this.state.singleBook.volumeInfo.imageLinks && 
+            <Image style={Styles.imgMed} source={{ uri: this.state.singleBook.volumeInfo.imageLinks.medium }} />} 
+            <Text style={Styles.title}>{this.state.singleBook.volumeInfo.title}</Text>
+            <Text style={Styles.title}>{this.state.singleBook.volumeInfo.authors[0]}</Text>
+            <Text style={Styles.subTitle}>{this.state.singleBook.volumeInfo.description}</Text>
+            </ScrollView>
+            ): <Text style={Styles.title}>Loading...</Text>}
+            </SafeAreaView>
         )
     }
 }

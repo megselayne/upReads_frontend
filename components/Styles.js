@@ -14,6 +14,9 @@ export default StyleSheet.create({
       backgroundColor: '#000',
       alignItems: 'center'
     },
+    contentContainer: {
+      alignItems: 'center'
+    },
     title: {
       color: 'white',
       fontSize: 20,
@@ -26,6 +29,10 @@ export default StyleSheet.create({
     logo: {
       height: 100,
       width: 100,
+    },
+    imgMed: {
+      height: 300,
+      width: 200
     },
     answerButtonContainer: {
       flexDirection: 'row',
